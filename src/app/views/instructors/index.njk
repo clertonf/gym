@@ -33,7 +33,11 @@
                      <td>   
                          <span style="background-image: url({{ instructor.avatar_url}})"></span> 
                          {{instructor.name}}</td>
-                     <td>{{instructor.services}}</td>
+                     <td>
+                      {% for service in instructor.services.split(',') %}
+                             <span class="services">{{service}}</span>
+                       {% endfor %}
+                     </td>
                      <td>{{instructor.total_students}}</td>
                      <td><a class="button" href="/instructors/{{instructor.id}}">Ver</a></td>
                 </tr>
